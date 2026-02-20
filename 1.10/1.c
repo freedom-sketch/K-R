@@ -5,7 +5,7 @@ int max; /* Текущая максимальная длина */
 char line[MAXLINE]; /* Текущая введенная строка */
 char longest[MAXLINE]; /* Самая длинная строкаиз из введенных */
 
-int getline(void);
+int f_getline(void);
 void copy(void);
 
 /* Вывод самой длинной строки в потоке; специальная версия */
@@ -16,7 +16,7 @@ int main(void)
     extern char longest[];
 
     max = 0;
-    while ((len = getline() > 0)) {
+    while ((len = f_getline() > 0)) {
         if (len > max) {
             max = len;
             copy();
@@ -31,7 +31,7 @@ int main(void)
 }
 
 /* getline: специальная версия */
-int getline(void)
+int f_getline(void)
 {
     int c, i;
     extern char line[];
